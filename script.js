@@ -8,11 +8,18 @@ function age(year, month, day) {
 }
 
 function handleDate(date) {
-    var pattern = /[0-9]{2}\/[0-9]{2}\/[0-9]{4}/;
-    if (pattern.test(date)) {
-        var year = date.substring(6, 9);
-        var month = date.substring(3, 4);
-        var day = date.substring(0, 1);
-        alert(age(year, month, day));
+    var year, month, day;
+    var patternBr = /[0-9]{2}\/[0-9]{2}\/[0-9]{4}/;
+    if (patternBr.test(date)) {
+        year = date.substring(6, 9);
+        month = date.substring(3, 4);
+        day = date.substring(0, 1);
     }
+    var patternUs = /[0-9]{4}\/[0-9]{2}\/[0-9]{2}/;
+    if (patternUs.test(date)) {
+        year = date.substring(0, 3);
+        month = date.substring(5, 6);
+        day = date.substring(8, 9);
+    }
+    alert(age(year, month, day));
 }
