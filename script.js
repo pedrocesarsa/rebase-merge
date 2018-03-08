@@ -3,6 +3,8 @@ function age(year, month, day) {
     var age = d.getFullYear() - year;
     if (month < d.getMonth() + 1) {
         return age - 1;
+    } else if (month == d.getMonth + 1 && day < d.getDate()) {
+        return age - 1;
     }
     return age;
 }
