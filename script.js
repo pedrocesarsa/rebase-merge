@@ -6,3 +6,13 @@ function age(year, month, day) {
     }
     return age;
 }
+
+function handleDate(date) {
+    var pattern = /[0-9]{2}\/[0-9]{2}\/[0-9]{4}/;
+    if (pattern.test(date)) {
+        var year = date.substring(6, 9);
+        var month = date.substring(3, 4);
+        var day = date.substring(0, 1);
+        alert(age(year, month, day));
+    }
+}
